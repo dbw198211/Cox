@@ -1,0 +1,18 @@
+#########
+# univariable Cox regression use codel like this
+
+Coef_LINC02875 = coxph(Surv(cox.data$OS_MONTHS, cox.data$OS_STATUS_D) ~ LINC02875,
+                         data = cox.data)
+summary(Coef_LINC02875)
+
+#########
+#multivariable Cox regression use codel like this
+
+test.multi.cox = coxph(Surv(multi.data$OS, multi.data$OD) ~ Age+Gender+Grade+Stage+Risk_score,
+                        data = multi.data)
+summary(test.multi.cox)
+
+
+
+
+
